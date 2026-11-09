@@ -118,7 +118,7 @@ In the DSH **Plugins** page, "Install from source" with either:
   ```
 - **GitHub Release tarball URL**:
   ```text
-  https://github.com/ST31Orange/SpaceOne_STK_MCP/releases/download/v1.0.0/spaceone-stk-plugin-1.0.1.tgz
+  https://github.com/ST31Orange/SpaceOne_STK_MCP/releases/download/v1.0.0/spaceone-stk-plugin-1.0.2.tgz
   ```
 
 Restart DSH (or open a new session) — the plugin registers **42 `stk_*` tools**.
@@ -134,7 +134,7 @@ Restart DSH (or open a new session) — the plugin registers **42 `stk_*` tools*
 > ```powershell
 > dsh plugin --profile desktop add "spaceone-stk-plugin"
 > # or
-> dsh plugin --profile desktop add "https://github.com/ST31Orange/SpaceOne_STK_MCP/releases/download/v1.0.0/spaceone-stk-plugin-1.0.1.tgz"
+> dsh plugin --profile desktop add "https://github.com/ST31Orange/SpaceOne_STK_MCP/releases/download/v1.0.0/spaceone-stk-plugin-1.0.2.tgz"
 > ```
 >
 > Behind an intranet proxy you may need `$env:NODE_OPTIONS="--use-system-ca"` first.

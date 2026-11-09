@@ -118,7 +118,7 @@ python -m spaceone_stk_mcp.cli selftest        # 启动 STK 并跑 12 步端到�
   ```
 - **GitHub Release tarball URL**：
   ```text
-  https://github.com/ST31Orange/SpaceOne_STK_MCP/releases/download/v1.0.0/spaceone-stk-plugin-1.0.1.tgz
+  https://github.com/ST31Orange/SpaceOne_STK_MCP/releases/download/v1.0.0/spaceone-stk-plugin-1.0.2.tgz
   ```
 
 安装后重启 DSH（或新开会话），插件注册 **42 个 `stk_*` 工具**。
@@ -133,7 +133,7 @@ python -m spaceone_stk_mcp.cli selftest        # 启动 STK 并跑 12 步端到�
 > ```powershell
 > dsh plugin --profile desktop add "spaceone-stk-plugin"
 > # 或
-> dsh plugin --profile desktop add "https://github.com/ST31Orange/SpaceOne_STK_MCP/releases/download/v1.0.0/spaceone-stk-plugin-1.0.1.tgz"
+> dsh plugin --profile desktop add "https://github.com/ST31Orange/SpaceOne_STK_MCP/releases/download/v1.0.0/spaceone-stk-plugin-1.0.2.tgz"
 > ```
 >
 > 若内网代理导致 TLS 证书错误，先设 `$env:NODE_OPTIONS="--use-system-ca"`。
