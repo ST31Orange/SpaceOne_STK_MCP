@@ -1,0 +1,6 @@
+{
+  "meta": {
+    "title": "STK Tools",
+    "description": "Drive local STK 11/12 through a Python kernel: scenarios, satellite orbits, access, coverage, data providers and reports."
+  }
+}

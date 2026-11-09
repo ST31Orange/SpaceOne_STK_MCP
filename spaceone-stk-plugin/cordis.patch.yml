@@ -1,0 +1,25 @@
+# spaceone-stk-plugin bundle patch — insert the STK tool plugin into the profile.
+#
+# Install locally (development checkout):
+#   dsh plugin --profile desktop add "link:D:\DSH_AI\DSH_STK_MCP\spaceone-stk-plugin"
+#
+# The plugin talks to the Python STK kernel at 127.0.0.1:8080. If that server is
+# not already running and autoStart is true, the plugin starts it on first use
+# with `python -m spaceone_stk_mcp.cli serve-http --port 8080`.
+#
+# Override any of these values in the profile's own cordis.patch.yml:
+#
+#   - id: spaceone-stk-plugin
+#     config:
+#       baseUrl: http://127.0.0.1:8080
+#       autoStart: true
+#       pythonPath: python
+#       timeoutMs: 180000
+- insert:
+    - id: spaceone-stk-plugin
+      name: spaceone-stk-plugin
+      config:
+        baseUrl: http://127.0.0.1:8080
+        autoStart: true
+        pythonPath: python
+        timeoutMs: 180000

@@ -1,0 +1,38 @@
+# spaceone-stk-plugin configuration example
+#
+# Current DSH versions compose profiles from cordis.patch.yml, not config.toml.
+# This file documents the same knobs in TOML form for hosts/tooling that use a
+# TOML config layer. For a real DSH profile, copy the `config` block from
+# `cordis.patch.yml` instead.
+#
+# Python kernel prerequisites:
+#   pip install -e D:\DSH_AI\DSH_STK_MCP\stk-mcp
+#   python -m spaceone_stk_mcp.cli serve-http --port 8080
+#
+# The TypeScript shell never calls STK COM directly. Every tool call is an HTTP
+# request to the Python kernel at baseUrl.
+
+[plugins.stk]
+# Python FastAPI kernel (default port 8080).
+base_url = "http://127.0.0.1:8080"
+
+# Optional shared secret; when the kernel sets STK_MCP_API_KEY, set the same
+# value here. The plugin sends it as X-API-Key.
+api_key = ""
+
+# Per-call wall-clock budget. Long coverage/report computations may need more.
+timeout_ms = 180000
+
+# Start `python -m spaceone_stk_mcp.cli serve-http` automatically on the first tool call
+# when the health check fails. Set false when the kernel is managed externally.
+auto_start = true
+
+# Python executable that has the spaceone-stk-mcp package installed.
+python_path = "python"
+
+# Host/port used for auto-start. server_port must match base_url's port.
+server_host = "127.0.0.1"
+server_port = 8080
+
+# How long to wait for the auto-started kernel to pass /health.
+startup_timeout_ms = 30000

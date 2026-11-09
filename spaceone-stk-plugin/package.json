@@ -1,0 +1,52 @@
+{
+  "name": "spaceone-stk-plugin",
+  "version": "1.0.0",
+  "description": "DeepSeek Harness native STK 11/12 tools: TypeScript shell + Python COM kernel over HTTP. 为 DSH 提供 42 个 STK Function Calling 工具（场景/轨道/访问/覆盖/报告/设备/平台航路/面目标/Walker/Astrogator），COM 全部在 Python 端执行。",
+  "keywords": [
+    "dsh",
+    "dsh-plugin",
+    "deepseek-harness",
+    "stk",
+    "agi",
+    "satellite",
+    "astrodynamics",
+    "mcp"
+  ],
+  "type": "module",
+  "main": "lib/index.js",
+  "exports": {
+    ".": {
+      "default": "./lib/index.js"
+    },
+    "./locale/*.json": "./locale/*.json",
+    "./icon": "./icon.svg",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "lib/**/*.js",
+    "locale/*.json",
+    "icon.svg",
+    "cordis.patch.yml",
+    "config.example.toml",
+    "README.md",
+    "README.en.md"
+  ],
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    }
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "check": "tsc -p tsconfig.json --noEmit",
+    "test": "npm run build && node --test test/*.test.mjs"
+  },
+  "license": "MIT",
+  "engines": {
+    "node": ">=20"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.0",
+    "typescript": "^5.7.0"
+  }
+}
