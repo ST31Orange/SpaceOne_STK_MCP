@@ -1,0 +1,31 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+.venv/
+venv/
+.ruff_cache/
+.pytest_cache/
+build/
+*.egg-info/
+dist-packages/
+
+# Node
+node_modules/
+
+# Windows
+Thumbs.db
+Desktop.ini
+
+# SpaceOne_STK_MCP build intermediates (keep only the shipped zip)
+dist/spaceone-stk-mcp-lan-kit-v1.0.0/
+dist/python/
+
+# Local / personal
+.credentials.yaml
+pavo_profile/
+pavo_output/
+*.log
+
+# bundled wheels are shipped via npm/release, not stored in git
+spaceone-stk-plugin/vendor/wheels/

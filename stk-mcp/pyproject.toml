@@ -1,0 +1,60 @@
+[build-system]
+requires = ["setuptools>=68.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "spaceone-stk-mcp"
+version = "1.0.0"
+description = "Complete STK 11/12 toolset exposed as an MCP server, a FastAPI REST kernel, and a Python library"
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+keywords = ["stk", "agi", "satellite", "astrodynamics", "mcp", "fastapi", "com"]
+authors = [{ name = "DSH STK MCP contributors" }]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Science/Research",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Scientific/Engineering :: Astronomy",
+    "Operating System :: Microsoft :: Windows",
+]
+dependencies = [
+    "mcp>=1.10.0",
+    "fastapi>=0.110.0",
+    "uvicorn[standard]>=0.27.0",
+    "pydantic>=2.6.0",
+    "jsonschema>=4.20.0",
+    "pywin32>=306; sys_platform == 'win32'",
+    "python-dotenv>=1.0.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.0",
+    "pytest-asyncio>=0.24",
+    "httpx>=0.27",
+    "ruff>=0.5",
+]
+
+[project.scripts]
+spaceone-stk-mcp = "spaceone_stk_mcp.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+spaceone_stk_mcp = ["contracts/*.json"]
+
+[tool.ruff]
+line-length = 110
+target-version = "py310"
+
+[tool.pytest.ini_options]
+asyncio_mode = "auto"
+testpaths = ["tests"]
+markers = [
+    "stk: requires a running local STK installation and COM automation",
+]
